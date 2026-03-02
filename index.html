@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Devicon para Ícones de Tecnologia -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
@@ -103,6 +105,14 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
+
+        /* Styles para o Modal */
+        #project-modal {
+            display: none; /* Oculto por padrão */
+        }
+        #project-modal.flex {
+            display: flex;
+        }
     </style>
 </head>
 <body class="antialiased font-sans relative">
@@ -124,7 +134,7 @@
                         <a href="#sobre" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Sobre</a>
                         <a href="#projetos" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Projetos</a>
                         <a href="#terminal" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Terminal Interativo</a>
-                        <a href="#tecnologias" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Tecnologias</a>
+                        <a href="#tecnologias" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Stack & Ferramentas</a>
                     </div>
                 </div>
                 <!-- Link para o GitHub real -->
@@ -161,8 +171,51 @@
         </div>
     </section>
 
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto fade-in-up">
+            <div class="flex items-center mb-10">
+                <h2 class="text-3xl font-bold"><span class="text-primary font-mono">01.</span> Sobre mim</h2>
+                <div class="h-px bg-gray-700 flex-grow ml-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="text-gray-300 space-y-4 text-lg leading-relaxed fade-in-up">
+                    <p>
+                        Minha jornada na tecnologia começou na área de <span class="text-primary">Suporte Técnico</span>, o que me deu uma base incrível para resolver problemas complexos e entender a infraestrutura por trás dos sistemas.
+                    </p>
+                    <p>
+                        Atualmente, estou mergulhando de cabeça no código, cursando <span class="text-secondary font-semibold">Análise e Desenvolvimento de Sistemas</span> na UNIFATECIE. Meu foco diário é construir projetos práticos que reforcem meus conhecimentos em back-end e front-end, especialmente com <span class="text-primary">Java, JavaScript, HTML e CSS</span>.
+                    </p>
+                    <p>
+                        Quando não estou codando ou "debugando" problemas de infraestrutura, gosto de relaxar montando setups de PC, jogando um bom FPS ou assistindo filmes.
+                    </p>
+                </div>
+                <div class="relative fade-in-up" style="transition-delay: 200ms;">
+                    <!-- Decoração visual simulando código -->
+                    <div class="glass p-6 rounded-xl relative z-10 font-mono text-sm text-gray-400">
+                        <div class="flex gap-2 mb-4 border-b border-gray-700 pb-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <p><span class="text-purple-400">const</span> <span class="text-blue-400">perfil</span> = {</p>
+                        <p class="ml-4">nome: <span class="text-green-400">'Andrey Giordane'</span>,</p>
+                        <p class="ml-4">local: <span class="text-green-400">'Curitiba, PR'</span>,</p>
+                        <p class="ml-4">papel: <span class="text-green-400">'Analista de Suporte & Estudante'</span>,</p>
+                        <p class="ml-4">formacao: <span class="text-green-400">'ADS - UNIFATECIE'</span>,</p>
+                        <p class="ml-4">foco: [<span class="text-green-400">'Java'</span>, <span class="text-green-400">'JavaScript'</span>, <span class="text-green-400">'HTML/CSS'</span>],</p>
+                        <p class="ml-4">status: <span class="text-green-400">'Codando...'</span></p>
+                        <p>}</p>
+                    </div>
+                    <div class="absolute inset-0 border-2 border-primary rounded-xl translate-x-4 translate-y-4 -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projetos Section (Integração com GitHub API) -->
-    <section id="projetos" class="py-20 px-4">
+    <section id="projetos" class="py-20 px-4 bg-gray-900/50">
         <div class="max-w-5xl mx-auto fade-in-up">
             <div class="flex items-center mb-10">
                 <h2 class="text-3xl font-bold"><span class="text-primary font-mono">02.</span> Meus Projetos</h2>
@@ -195,52 +248,10 @@
     </section>
 
     <!-- Terminal Interativo Section -->
-    <section id="terminal" class="py-20 px-4 bg-gray-900/50">
+    <section id="terminal" class="py-20 px-4">
         <div class="max-w-4xl mx-auto fade-in-up">
             <div class="flex items-center mb-10">
-                <h2 class="text-3xl font-bold"><span class="text-primary font-mono">03.</span> Interaja comigo</h2>
-                <div class="h-px bg-gray-700 flex-grow ml-6"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <div class="text-gray-300 space-y-4 text-lg leading-relaxed fade-in-up">
-                    <p>
-                        Minha jornada na tecnologia começou na área de <span class="text-primary">Suporte Técnico</span>, o que me deu uma base incrível para resolver problemas complexos e entender a infraestrutura por trás dos sistemas.
-                    </p>
-                    <p>
-                        Atualmente, estou mergulhando de cabeça no código, cursando <span class="text-secondary font-semibold">Análise e Desenvolvimento de Sistemas</span>. Meu foco diário é construir projetos práticos que reforcem meus conhecimentos em back-end e front-end.
-                    </p>
-                    <p>
-                        Quando não estou codando ou "debugando" problemas de infraestrutura, gosto de relaxar montando setups de PC, jogando um bom FPS ou assistindo filmes.
-                    </p>
-                </div>
-                <div class="relative fade-in-up" style="transition-delay: 200ms;">
-                    <!-- Decoração visual simulando código -->
-                    <div class="glass p-6 rounded-xl relative z-10 font-mono text-sm text-gray-400">
-                        <div class="flex gap-2 mb-4 border-b border-gray-700 pb-2">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                        </div>
-                        <p><span class="text-purple-400">const</span> <span class="text-blue-400">perfil</span> = {</p>
-                        <p class="ml-4">nome: <span class="text-green-400">'Andrey Giordane'</span>,</p>
-                        <p class="ml-4">local: <span class="text-green-400">'Curitiba, PR'</span>,</p>
-                        <p class="ml-4">papel: <span class="text-green-400">'Dev em Formação'</span>,</p>
-                        <p class="ml-4">foco: [<span class="text-green-400">'Java'</span>, <span class="text-green-400">'JavaScript'</span>],</p>
-                        <p class="ml-4">status: <span class="text-green-400">'Estudando muito'</span></p>
-                        <p>}</p>
-                    </div>
-                    <div class="absolute inset-0 border-2 border-primary rounded-xl translate-x-4 translate-y-4 -z-10"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Terminal Interativo Section -->
-    <section id="terminal" class="py-20 px-4 bg-gray-900/50">
-        <div class="max-w-4xl mx-auto fade-in-up">
-            <div class="flex items-center mb-10">
-                <h2 class="text-3xl font-bold"><span class="text-primary font-mono">02.</span> Interaja comigo</h2>
+                <h2 class="text-3xl font-bold"><span class="text-primary font-mono">03.</span> Terminal Interativo</h2>
                 <div class="h-px bg-gray-700 flex-grow ml-6"></div>
             </div>
             <p class="text-gray-400 mb-6 font-mono text-sm">Digite comandos no terminal abaixo para descobrir informações sobre o meu perfil. Tente digitar 'help'.</p>
@@ -270,34 +281,82 @@
         </div>
     </section>
 
-    <!-- Tecnologias Section -->
+    <!-- Stack & Ferramentas Section -->
     <section id="tecnologias" class="py-20 px-4">
         <div class="max-w-4xl mx-auto">
-            <div class="flex items-center mb-10">
-                <h2 class="text-3xl font-bold"><span class="text-primary font-mono">04.</span> Tecnologias</h2>
+            <div class="flex items-center mb-16">
+                <h2 class="text-3xl font-bold"><span class="text-primary font-mono">04.</span> 🛠️ Stack & Ferramentas</h2>
                 <div class="h-px bg-gray-700 flex-grow ml-6"></div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Java -->
-                <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group fade-in-up">
-                    <i class="fa-brands fa-java text-5xl text-gray-400 group-hover:text-[#ED8B00] transition-colors"></i>
-                    <span class="font-bold">Java</span>
+            <!-- Linguagens -->
+            <div class="mb-12 fade-in-up">
+                <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-gray-200 border-b border-gray-800 pb-2">
+                    <i class="fa-solid fa-code text-blue-400"></i> Linguagens
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <i class="devicon-java-plain text-5xl text-gray-400 group-hover:text-[#ED8B00] transition-colors"></i>
+                        <span class="font-bold text-sm">Java</span>
+                    </div>
+                    <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <i class="devicon-javascript-plain text-5xl text-gray-400 group-hover:text-[#F7DF1E] transition-colors"></i>
+                        <span class="font-bold text-sm">JavaScript</span>
+                    </div>
+                    <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <i class="devicon-html5-plain text-5xl text-gray-400 group-hover:text-[#E34F26] transition-colors"></i>
+                        <span class="font-bold text-sm">HTML5</span>
+                    </div>
+                    <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <i class="devicon-css3-plain text-5xl text-gray-400 group-hover:text-[#1572B6] transition-colors"></i>
+                        <span class="font-bold text-sm">CSS3</span>
+                    </div>
                 </div>
-                <!-- JavaScript -->
-                <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group fade-in-up" style="transition-delay: 100ms;">
-                    <i class="fa-brands fa-js text-5xl text-gray-400 group-hover:text-[#F7DF1E] transition-colors"></i>
-                    <span class="font-bold">JavaScript</span>
+            </div>
+
+            <!-- Ferramentas & IDEs -->
+            <div class="mb-12 fade-in-up" style="transition-delay: 150ms;">
+                <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-gray-200 border-b border-gray-800 pb-2">
+                    <i class="fa-solid fa-toolbox text-pink-500"></i> Ferramentas & IDEs
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                    <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <i class="devicon-intellij-plain text-5xl text-gray-400 group-hover:text-[#ffffff] transition-colors"></i>
+                        <span class="font-bold text-sm">IntelliJ</span>
+                    </div>
+                    <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <i class="devicon-vscode-plain text-5xl text-gray-400 group-hover:text-[#0078D4] transition-colors"></i>
+                        <span class="font-bold text-sm">VS Code</span>
+                    </div>
+                    <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <i class="devicon-git-plain text-5xl text-gray-400 group-hover:text-[#F05033] transition-colors"></i>
+                        <span class="font-bold text-sm">Git</span>
+                    </div>
+                    <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <i class="devicon-github-original text-5xl text-gray-400 group-hover:text-[#ffffff] transition-colors"></i>
+                        <span class="font-bold text-sm">GitHub</span>
+                    </div>
+                    <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <i class="devicon-postman-plain text-5xl text-gray-400 group-hover:text-[#FF6C37] transition-colors"></i>
+                        <span class="font-bold text-sm">Postman</span>
+                    </div>
                 </div>
-                <!-- HTML5 -->
-                <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group fade-in-up" style="transition-delay: 200ms;">
-                    <i class="fa-brands fa-html5 text-5xl text-gray-400 group-hover:text-[#E34F26] transition-colors"></i>
-                    <span class="font-bold">HTML5</span>
-                </div>
-                <!-- CSS3 -->
-                <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group fade-in-up" style="transition-delay: 300ms;">
-                    <i class="fa-brands fa-css3-alt text-5xl text-gray-400 group-hover:text-[#1572B6] transition-colors"></i>
-                    <span class="font-bold">CSS3</span>
+            </div>
+
+            <!-- Banco de Dados -->
+            <div class="fade-in-up" style="transition-delay: 300ms;">
+                <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-gray-200 border-b border-gray-800 pb-2">
+                    <i class="fa-solid fa-database text-purple-400"></i> Banco de Dados
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <i class="devicon-postgresql-plain text-5xl text-gray-400 group-hover:text-[#4169e1] transition-colors"></i>
+                        <span class="font-bold text-sm">PostgreSQL</span>
+                    </div>
+                    <div class="glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <i class="devicon-mysql-plain text-5xl text-gray-400 group-hover:text-[#4479A1] transition-colors"></i>
+                        <span class="font-bold text-sm">MySQL</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -311,6 +370,18 @@
             <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
         </div>
     </footer>
+
+    <!-- Modal de Detalhes do Projeto -->
+    <div id="project-modal" class="fixed inset-0 z-50 items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm hidden">
+        <div class="glass rounded-xl max-w-2xl w-full p-6 relative fade-in-up">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Conteúdo será preenchido dinamicamente -->
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts de Interatividade -->
     <script>
@@ -352,6 +423,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             setTimeout(type, 1000);
             fetchGitHubProjects();
+            setupModalListeners();
         });
 
         // --- Integração Dinâmica com a API do GitHub ---
@@ -372,7 +444,7 @@
                 if(validRepos.length > 0) {
                     validRepos.forEach((repo, index) => {
                         const card = document.createElement('div');
-                        card.className = 'glass p-6 rounded-xl hover:-translate-y-2 transition-transform duration-300 group relative fade-in-up visible border-l-4 border-l-primary';
+                        card.className = 'glass p-6 rounded-xl hover:-translate-y-2 transition-transform duration-300 group relative fade-in-up visible border-l-4 border-l-primary cursor-pointer';
                         card.style.transitionDelay = `${index * 100}ms`;
                         
                         const description = repo.description ? repo.description : 'Projeto focado no estudo e desenvolvimento das minhas habilidades em programação.';
@@ -388,9 +460,9 @@
                         card.innerHTML = `
                             <div class="flex justify-between items-start mb-4">
                                 <i class="fa-regular fa-folder-open text-3xl text-primary group-hover:scale-110 transition-transform"></i>
-                                <a href="${repo.html_url}" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="Ver código fonte">
-                                    <i class="fa-brands fa-github text-2xl"></i>
-                                </a>
+                                <span class="text-gray-400 group-hover:text-white transition-colors" title="Ver detalhes">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xl"></i>
+                                </span>
                             </div>
                             <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors truncate capitalize">${repo.name.replace(/-/g, ' ').replace(/_/g, ' ')}</h3>
                             <p class="text-gray-400 text-sm mb-6 line-clamp-3 h-[60px] leading-relaxed">${description}</p>
@@ -399,6 +471,9 @@
                                 ${language}
                             </div>
                         `;
+                        
+                        // Adiciona evento de clique para abrir o modal
+                        card.addEventListener('click', () => openProjectModal(repo));
                         container.appendChild(card);
                     });
                 } else {
@@ -408,6 +483,83 @@
                 container.innerHTML = '<p class="text-red-400 col-span-2">Erro ao se conectar com a API do GitHub. <a href="https://github.com/andreygiordane" target="_blank" class="underline">Visite meu perfil diretamente.</a></p>';
             }
         }
+
+        // --- Lógica do Modal de Projetos ---
+        const projectModal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        function openProjectModal(repo) {
+            const description = repo.description ? repo.description : 'Projeto focado no estudo e desenvolvimento das minhas habilidades em programação.';
+            const language = repo.language ? repo.language : 'Desconhecido';
+            const createdDate = new Date(repo.created_at).toLocaleDateString('pt-BR');
+            const updatedDate = new Date(repo.updated_at).toLocaleDateString('pt-BR');
+
+             // Ícones dinâmicos para o modal
+             let langIcon = 'fa-code';
+            if(language.toLowerCase() === 'java') langIcon = 'fa-java fa-brands';
+            if(language.toLowerCase() === 'javascript') langIcon = 'fa-js fa-brands';
+            if(language.toLowerCase() === 'html') langIcon = 'fa-html5 fa-brands';
+            if(language.toLowerCase() === 'css') langIcon = 'fa-css3-alt fa-brands';
+
+            modalContent.innerHTML = `
+                <h2 class="text-3xl font-bold mb-4 text-primary capitalize">${repo.name.replace(/-/g, ' ').replace(/_/g, ' ')}</h2>
+                
+                <div class="flex items-center text-sm font-mono text-secondary mb-6 space-x-4">
+                    <div class="flex items-center">
+                        <i class="${langIcon} mr-2 text-lg"></i>
+                        ${language}
+                    </div>
+                    <div class="flex items-center" title="Data de Criação">
+                        <i class="fa-regular fa-calendar-plus mr-2"></i>
+                        ${createdDate}
+                    </div>
+                     <div class="flex items-center" title="Última Atualização">
+                        <i class="fa-regular fa-calendar-check mr-2"></i>
+                        ${updatedDate}
+                    </div>
+                </div>
+
+                <div class="text-gray-300 text-lg leading-relaxed mb-8">
+                    <p>${description}</p>
+                </div>
+
+                <div class="flex space-x-4">
+                    <a href="${repo.html_url}" target="_blank" class="inline-flex items-center gap-2 bg-primary hover:bg-sky-400 text-dark font-bold py-3 px-6 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-primary/30">
+                        <i class="fa-brands fa-github text-xl"></i> Ver no GitHub
+                    </a>
+                    ${repo.homepage ? `
+                        <a href="${repo.homepage}" target="_blank" class="inline-flex items-center gap-2 bg-card hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-full border border-gray-600 transition-all transform hover:scale-105">
+                            <i class="fa-solid fa-globe text-xl"></i> Ver Deploy
+                        </a>
+                    ` : ''}
+                </div>
+            `;
+            projectModal.classList.remove('hidden');
+            projectModal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Impede rolagem do corpo
+        }
+
+        function closeProjectModal() {
+            projectModal.classList.add('hidden');
+            projectModal.classList.remove('flex');
+            document.body.style.overflow = ''; // Restaura rolagem do corpo
+        }
+
+        function setupModalListeners() {
+            closeModalBtn.addEventListener('click', closeProjectModal);
+            projectModal.addEventListener('click', (e) => {
+                if (e.target === projectModal) {
+                    closeProjectModal();
+                }
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !projectModal.classList.contains('hidden')) {
+                    closeProjectModal();
+                }
+            });
+        }
+
 
         // --- Animações ao Rolar a Página ---
         const observerOptions = {
@@ -473,13 +625,13 @@
                     `;
                     break;
                 case 'about':
-                    responseDiv.innerHTML = "Sou o Andrey Giordane. Trabalho com suporte técnico e atualmente estudo Análise e Desenvolvimento de Sistemas. Gosto de resolver problemas, seja consertando um PC ou caçando bugs no código.";
+                    responseDiv.innerHTML = "Sou o Andrey Giordane. Trabalho como Analista de Suporte e atualmente curso Análise e Desenvolvimento de Sistemas na UNIFATECIE. Gosto de resolver problemas, seja na infraestrutura ou no código, com foco em Java, JavaScript, HTML e CSS.";
                     break;
                 case 'skills':
-                    responseDiv.innerHTML = "Minha stack de estudos atual inclui: <span class=\"text-yellow-400\">JavaScript</span>, <span class=\"text-orange-400\">Java</span>, <span class=\"text-blue-400\">CSS3</span>, <span class=\"text-red-400\">HTML5</span> e <span class=\"text-gray-400\">Git/GitHub</span>.";
+                    responseDiv.innerHTML = "Minha stack de estudos atual inclui:<br>- <span class=\"text-primary\">Linguagens:</span> Java, JavaScript, HTML5, CSS3.<br>- <span class=\"text-pink-400\">Ferramentas:</span> IntelliJ IDEA, VS Code, Git/GitHub, Postman.<br>- <span class=\"text-purple-400\">Banco de Dados:</span> PostgreSQL, MySQL.";
                     break;
                 case 'projects':
-                    responseDiv.innerHTML = "Acabei de puxar os dados usando a API do GitHub! Suba a página até a seção 'Meus Projetos' ou acesse direto: <a href='https://github.com/andreygiordane' class='text-primary hover:underline' target='_blank'>github.com/andreygiordane</a>";
+                    responseDiv.innerHTML = "Acabei de puxar os dados usando a API do GitHub! Suba a página até a seção 'Meus Projetos' e clique neles para ver mais detalhes, ou acesse direto: <a href='https://github.com/andreygiordane' class='text-primary hover:underline' target='_blank'>github.com/andreygiordane</a>";
                     break;
                 case 'contact':
                     responseDiv.innerHTML = `
